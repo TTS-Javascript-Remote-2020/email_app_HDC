@@ -1,4 +1,8 @@
 let emailClient = {
+  user: {
+    email: 'emailQueen@AwesomeCompany.com',
+    name: 'Email Queen'
+  },
   emails: [],
   tags: [
     'inbox',
@@ -36,11 +40,11 @@ for (let x = 0; x <= 29; x++) {
   } else if (x < 15) {
       emailClient.emails[x].tag = 'snoozed';
   } else if (x < 20) {
-      emailClient.emails[x].sender = 'me';
+      emailClient.emails[x].sender = emailClient.user.email;
       emailClient.emails[x].subject = `Reasons why we can't do something awesome for ${x}company`;
       emailClient.emails[x].tag = 'sent';
   } else if (x < 25) {
-      emailClient.emails[x].sender = 'me';
+      emailClient.emails[x].sender = emailClient.user.email;
       emailClient.emails[x].subject = `Things to consider before doing something awesome for ${x}company`;
       emailClient.emails[x].tag = 'draft';
   } else if (x < 30) {
@@ -52,7 +56,8 @@ for (let x = 0; x <= 29; x++) {
   emailClient.contacts.push(
     {
       name: 'Some Interesting Name',
-      email: `someEmail${x}@${x}company.com`
+      email: `someEmail${x}@${x}company.com`,
+      favorite: false
     }
   )
 }
